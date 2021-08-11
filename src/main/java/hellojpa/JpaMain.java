@@ -16,31 +16,6 @@ public class JpaMain {
 
 		tx.begin();
 
-
-		for (int i = 0; i < 5; i++) {
-			Student student = new Student();
-
-			student.setName("dsafas");
-			student.setAge("sdafsa");
-			student.setStudent("asdfasd");
-
-			em.persist(student);
-		}
-
-
-		for (int i = 0; i < 5; i++) {
-			Teacher teacher = new Teacher();
-
-			teacher.setTeacher("dsaf");
-
-			teacher.setName("dsafas");
-
-			teacher.setAge("asfasd");
-
-			em.persist(teacher);
-		}
-
-
 		tx.commit();
 
 		em.close();

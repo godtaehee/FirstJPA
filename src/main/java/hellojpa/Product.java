@@ -1,24 +1,22 @@
 package hellojpa;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
+import javax.persistence.OneToMany;
 import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-@Table(name = "member")
-@Inheritance(strategy = InheritanceType.JOINED)
-public class Member {
+public class Product {
 
 	@Id @GeneratedValue
 	Long id;
 
 	String name;
 
-	String age;
-
-	@OneToMany(mappedBy = "member")
+	@OneToMany(mappedBy = "product")
 	private List<MemberProduct> memberProduct = new ArrayList<>();
-
 
 	public Long getId() {
 		return id;
@@ -34,13 +32,5 @@ public class Member {
 
 	public void setName(String name) {
 		this.name = name;
-	}
-
-	public String getAge() {
-		return age;
-	}
-
-	public void setAge(String age) {
-		this.age = age;
 	}
 }
